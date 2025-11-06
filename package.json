@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "export:json": "node export-json.js",
-    "export:csv": "node export-csv.js"
+    "export:csv": "node export-csv.js",
+    "clear:invoices": "node clear-invoices.js"
   },
   "dependencies": {
     "better-sqlite3": "^9.4.3",
