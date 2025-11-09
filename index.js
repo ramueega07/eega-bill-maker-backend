@@ -107,7 +107,8 @@ app.get('/api/invoices/:invoiceNo', (req, res) => {
 // Next invoice number for a given date (YYYYMMDD)
 app.get('/api/next-invoice', (req, res) => {
   try {
-    const date = (req.query.date || new Date().toISOString().split('T')[0].replace(/-/g, '')) + '';
+    const dateInput = req.query.date || new Date().toISOString().split('T')[0];
+    const date = dateInput.replace(/-/g, '');
     if (!/^\d{8}$/.test(date)) {
       return res.status(400).json({ error: 'Invalid date format. Use YYYYMMDD' });
     }
